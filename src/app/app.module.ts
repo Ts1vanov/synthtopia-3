@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +13,17 @@ import { DigitalSynthsComponent } from './body/digital-synths/digital-synths.com
 import { ProductDetailComponent } from './body/product-detail/product-detail.component';
 import { ProductsComponent } from './body/products/products.component';
 import { ProductItemComponent } from './body/products/product-item/product-item.component';
-import { RouterModule, Routes } from '@angular/router';
+import { ProductStartComponent } from './body/anlogue-synths/product-start/product-start.component';
+
 // import { MyFilterPipe } from './body/pipes/MyFilterPipe.pipe';
 
 
 const appRoutes: Routes = [
 {path: 'home', component: HomeComponent},
-{path: 'analogue-synths', component: AnalogueSynthsComponent },
+{path: 'analogue-synths', component: AnalogueSynthsComponent,children: [
+  {path: '', component: ProductStartComponent},
+  {path: ':id', component: ProductDetailComponent}
+] },
 {path: 'digital-synths', component: DigitalSynthsComponent}
 ]
 

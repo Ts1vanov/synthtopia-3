@@ -1,7 +1,6 @@
 <a 
-    routerLink="."
-    class="list-group-item clearfix"
-    (click)="onSelected()">
+    [routerLink]="[index]"
+    class="list-group-item clearfix">
     <h4>{{product.name}}</h4>
     <img src="{{product.imagePath}}" alt="{{product.name}}"
     style="max-width: 200px;">
