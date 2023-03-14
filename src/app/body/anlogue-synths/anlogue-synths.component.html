@@ -1,0 +1,13 @@
+<div class="row" 
+style="margin-top: 5vh;">
+    <div class="col">
+        <app-product-item
+        *ngFor="let productEl of products"
+        [product] ="productEl"></app-product-item>
+    </div>
+    <div class="col">
+        <app-product-detail
+        *ngIf="productSelected"
+        [product]="productSelected"></app-product-detail>
+    </div>
+</div>
